@@ -33,7 +33,7 @@ li {
 }
 
 h2 {
-  color: #333;
+  color: skyblue;
 }
 
 li ul {
@@ -42,7 +42,11 @@ li ul {
 }
 
 li ul li {
-  color: #666;
+  color: pink;
+}
+
+.whiteBackground {
+  background-color: white;
 }
 
 @keyframes logo-spin {
