@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+ 
 }
 
 .logo {
@@ -22,18 +23,22 @@
 ul {
   list-style-type: none;
   padding: 0;
+
 }
 
 h1 {
   text-align: center;
+
 }
 
 li {
   margin-bottom: 10px;
+ 
 }
 
 h2 {
   color: skyblue;
+
 }
 
 li ul {
@@ -45,9 +50,7 @@ li ul li {
   color: pink;
 }
 
-.whiteBackground {
-  background-color: white;
-}
+
 
 @keyframes logo-spin {
   from {
@@ -70,4 +73,20 @@ li ul li {
 
 .read-the-docs {
   color: #888;
+}
+
+.App{
+  background-color:white;
+  height:100vh;
+  width:100vw;
+}
+
+.search-bar-container{
+
+  width:40%;
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width:200px;
 }

@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import RecipeList from './RecipeList';
+
+import RecipeList from './components/RecipeList';
+
+import{SearchBar} from "./components/SearchBar";
+import{SearchResultsList} from "./components/SearchResultsList";
 
 const App = () => {
 
-  return (
-    <div className="app" style={{ backgroundColor: 'red' }}>
-      
+ const[results,setResults] = useState([]);
 
-      <RecipeList />
+  return (
+  
+    <div className="App">
+        <h1>Recipes Finder </h1>
+        <SearchBar/>
+      <div className = "search-bar-container">
       
+<SearchResultsList results = {results}/>
+     <RecipeList /> 
+      </div>
     
     </div>
   );
