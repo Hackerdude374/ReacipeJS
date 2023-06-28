@@ -6,7 +6,12 @@ function RecipeItem({ recipe }) {
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
   };
-//implemented a popup so when a recipe is clicked on it will  open up ingredients and instructions
+// x button for popup
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+
+//implemented a popup so when a recipe is clicked on it will  open up ingredients and instructions, videos
   return (
     <div className="recipe-item" onClick={togglePopup}>
       <img src={recipe.image} alt={recipe.name} className="recipe-image" />
@@ -14,6 +19,7 @@ function RecipeItem({ recipe }) {
       {/*this is pop up, when recipe cicked on display name and ingredients and instructions*/}
       {isPopupOpen && (
         <div className="popup">
+           <button className="close-button" onClick={closePopup}>x</button> {/*x button*/}
           <h3>{recipe.name}</h3>
           <h4>Ingredients:</h4>
           <ul>

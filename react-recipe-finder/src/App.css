@@ -6,7 +6,7 @@
 
 .search-bar {
   margin-bottom: 20px;
-  background-color:tan;
+
   
 }
 
@@ -69,6 +69,12 @@
 .recipe-form{
   align-items:center;
   display:flex;
+  background-color:tan;
+}
+
+.recipe-image{
+  height:200px;
+  width:200px;
 }
 
 header{
