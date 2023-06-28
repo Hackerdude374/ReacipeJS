@@ -1,28 +1,36 @@
 import React, { useState } from 'react';
+import SearchBar from './components/SearchBar';
+import RecipeList from './components/RecipeList';
+import RecipeData from './components/RecipeData';
+import RecipeForm from './components/RecipeForm';
+import RecipeItem from './components/RecipeItem';
 import './App.css';
 
-import RecipeList from './components/RecipeList';
+function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [recipes, setRecipes] = useState(RecipeData);
 
-import{SearchBar} from "./components/SearchBar";
-import{SearchResultsList} from "./components/SearchResultsList";
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
 
-const App = () => {
+  const handleAddRecipe = (newRecipe) => {
+    setRecipes([...recipes, newRecipe]);
+  };
 
- const[results,setResults] = useState([]);
+  const filteredRecipes = recipes.filter((recipe) =>
+    recipe.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
-  
+
     <div className="App">
-        <h1>Recipes Finder </h1>
-        <SearchBar/>
-      <div className = "search-bar-container">
-      
-<SearchResultsList results = {results}/>
-     <RecipeList /> 
-      </div>
-    
+      <header> Recipe App </header>
+      <SearchBar handleSearch={handleSearch} />
+      <RecipeList recipes={filteredRecipes} />
+      <RecipeForm handleAddRecipe={handleAddRecipe} />
     </div>
   );
-};
+}
 
 export default App;

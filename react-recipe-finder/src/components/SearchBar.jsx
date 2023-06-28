@@ -1,37 +1,30 @@
-import React, {useState} from "react";
-import "./SearchBar.css";
-import { FaSearch } from "react-icons/fa";
-import "./SearchBar.css";
-export const SearchBar = ()=>{
-    const [input, setInput] = useState("");
+import React, { useState } from 'react';
 
-    const fetchData = (value) =>{
-        fetch("https://jsonplaceholder.typicode.com/users").then((response) => response.json()).then((json)=> { //this link holds results for search bar
-          const results = json.filter((user)=>{
-            return 
-            value &&
-            user && 
-            user.name  && 
-            user.name.toLowerCase().includes(value)
-          });
-          console.log(results);
-    });
-};
+function SearchBar({ handleSearch }) {
+  const [searchQuery, setSearchQuery] = useState('');
 
-    const handleChange =(value)=>{
-        setInput(value);
-        fetchData(value);
-    }
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
-    return (
-    <div className = "input-wrapper">
-        <FaSearch id = "search-icon"/>
-        <input placeholder = "type to search..."
-        value = {input} 
-        onChange= {(e) => setInput(e.target.value)}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSearch(searchQuery);
+  };
+
+  return (
+    <div className="search-bar">
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Search recipes..."
+          value={searchQuery}
+          onChange={handleChange}
         />
+        <button type="submit">Search</button>
+      </form>
     </div>
-    );
-    };
+  );
+}
 
-    export default SearchBar;
+export default SearchBar;
