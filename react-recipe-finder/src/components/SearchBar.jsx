@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 function SearchBar({ handleSearch }) {
   const [searchQuery, setSearchQuery] = useState('');
+  
+
 
   const handleChange = (e) => {
     setSearchQuery(e.target.value);
@@ -11,6 +13,8 @@ function SearchBar({ handleSearch }) {
     e.preventDefault();
     handleSearch(searchQuery);
   };
+
+  
 
   return (
     <div className="search-bar">

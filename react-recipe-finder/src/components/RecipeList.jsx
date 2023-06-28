@@ -3,7 +3,7 @@ import RecipeItem from './RecipeItem';
 
 function RecipeList({ recipes }) {
   return (
-    <div className="recipe-list">
+    <div className="recipe-list" >
       {recipes.map((recipe, index) => (
         <RecipeItem key={index} recipe={recipe} />
       ))}

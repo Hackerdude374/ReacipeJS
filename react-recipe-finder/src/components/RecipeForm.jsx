@@ -6,8 +6,8 @@ function RecipeForm({ handleAddRecipe }) {
   const [instructions, setInstructions] = useState('');
     const [image, setImage] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const newRecipe = {
       name,
       ingredients: ingredients.split(',').map((ingredient) => ingredient.trim()),

@@ -25,11 +25,19 @@ function App() {
   return (
 
     <div className="App">
-      <header> Recipe App </header>
+      <header> Recipe Finder!</header>
+      
       <SearchBar handleSearch={handleSearch} />
+      <div >
       <RecipeList recipes={filteredRecipes} />
+      </div>
       <RecipeForm handleAddRecipe={handleAddRecipe} />
+      
+
+
     </div>
+
+    
   );
 }
 

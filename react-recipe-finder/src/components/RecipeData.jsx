@@ -1,3 +1,5 @@
+//objects to hold reciep data (4 items)
+
 const recipeData = [
     {
       name: 'Chocolate Chip Cookies',
