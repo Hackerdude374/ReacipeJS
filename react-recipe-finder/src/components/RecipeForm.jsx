@@ -23,7 +23,7 @@ function RecipeForm({ handleAddRecipe }) {
       body: JSON.stringify(newRecipe)
     });
     const addedRecipe = await response.json();
-    handleAddRecipe(newRecipe);
+    handleAddRecipe(addedRecipe);
     setName('');
     setIngredients('');
     setInstructions('');
