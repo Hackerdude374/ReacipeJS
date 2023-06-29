@@ -6,7 +6,7 @@ function RecipeForm({ handleAddRecipe }) {
   const [instructions, setInstructions] = useState('');
     const [image, setImage] = useState('');
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = /*async*/(e) => {
     e.preventDefault();
     const newRecipe = {
       name,
@@ -15,6 +15,7 @@ function RecipeForm({ handleAddRecipe }) {
       image
     };
     //fetch db.json
+    /*
     const response = await fetch('http://localhost:3000/NewRecipeData',{
       method:'POST',
       headers:{
@@ -23,7 +24,8 @@ function RecipeForm({ handleAddRecipe }) {
       body: JSON.stringify(newRecipe)
     });
     const addedRecipe = await response.json();
-    handleAddRecipe(addedRecipe);
+    */
+    handleAddRecipe(newRecipe);
     setName('');
     setIngredients('');
     setInstructions('');

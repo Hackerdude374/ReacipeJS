@@ -11,7 +11,7 @@ function App() {
   const [recipes, setRecipes] = useState(RecipeData);
   const[NewRecipes, setNewRecipes] = useState([]);
 /*db.json*/
-
+/*
 useEffect(() => {
   let ignore = false;
 
@@ -29,7 +29,7 @@ return () => {
   ignore = true;
 }
 }, []);
-
+*/
 
 /*-------------*/
 
@@ -40,6 +40,7 @@ return () => {
 
   const handleAddRecipe = (newRecipe) => {
     setRecipes([...recipes, newRecipe]);
+    setNewRecipes([...NewRecipes, newRecipe]);
   };
 
   const filteredRecipes = recipes.filter((recipe) =>
