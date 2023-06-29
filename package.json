@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "react-icons": "^4.10.1"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.3"
   }
 }

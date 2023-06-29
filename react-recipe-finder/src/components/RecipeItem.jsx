@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function RecipeItem({ recipe }) {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -11,7 +11,7 @@ function RecipeItem({ recipe }) {
     setIsPopupOpen(false);
   };
 //press escape to leave popup
-/*
+
   useEffect(() => {
     const handleKeyPress = (event) => {
       if (event.key === 'Escape') {
@@ -26,7 +26,7 @@ function RecipeItem({ recipe }) {
       window.removeEventListener('keydown', handleKeyPress);
     };
   }, [isPopupOpen]);
-  */
+  
 //implemented a popup so when a recipe is clicked on it will  open up ingredients and instructions, videos
   return (
     
