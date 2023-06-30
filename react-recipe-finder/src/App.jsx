@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import SearchBar from './components/SearchBar';
 import RecipeList from './components/RecipeList';
 import RecipeData from './components/RecipeData';
@@ -11,17 +12,17 @@ function App() {
   const [recipes, setRecipes] = useState(RecipeData);
   const[NewRecipes, setNewRecipes] = useState([]);
 /*db.json*/
-/*
+
 useEffect(() => {
   let ignore = false;
 
 async function fetchRecipes() {
   const response = await fetch('http://localhost:3000/NewRecipeData');
-  const NewRecipes = await response.json();
+  const recipes = await response.json();
   if(!ignore) {
-    setNewRecipes(NewRecipes);
+    setNewRecipes(recipes);
   }
-  return NewRecipes;
+  return recipes;
 }
 fetchRecipes();
 
@@ -29,7 +30,7 @@ return () => {
   ignore = true;
 }
 }, []);
-*/
+
 
 /*-------------*/
 

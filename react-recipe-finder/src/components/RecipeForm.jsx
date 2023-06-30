@@ -6,26 +6,28 @@ function RecipeForm({ handleAddRecipe }) {
   const [instructions, setInstructions] = useState('');
     const [image, setImage] = useState('');
 
-  const handleSubmit = /*async*/(e) => {
+    
+  const handleSubmit = async(e) => {
     e.preventDefault();
     const newRecipe = {
       name,
       ingredients: ingredients.split(',').map((ingredient) => ingredient.trim()),
       instructions: instructions.split('\n').map((instruction) => instruction.trim()),
-      image
+      image,
+      status: 1,
     };
     //fetch db.json
-    /*
+    
     const response = await fetch('http://localhost:3000/NewRecipeData',{
       method:'POST',
       headers:{
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newRecipe)
+      body: JSON.stringify(newRecipe),
     });
     const addedRecipe = await response.json();
-    */
-    handleAddRecipe(newRecipe);
+   
+    handleAddRecipe(addedRecipe);
     setName('');
     setIngredients('');
     setInstructions('');
