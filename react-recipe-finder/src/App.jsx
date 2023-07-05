@@ -12,7 +12,7 @@ function App() {
   const [recipes, setRecipes] = useState(RecipeData);
   const[NewRecipes, setNewRecipes] = useState([]);
 /*db.json*/
-
+/*
 useEffect(() => {
   let ignore = false;
 
@@ -30,7 +30,43 @@ return () => {
   ignore = true;
 }
 }, []);
+*/
+useEffect(() => {
+  let ignore = false;
 
+  async function fetchRecipes() {
+    try {
+      const response = await fetch('http://localhost:3000/NewRecipeData');
+      const recipes = await response.json();
+      if (!ignore) {
+        setNewRecipes(recipes);
+      }
+      return recipes;
+    } catch (error) {
+      console.error('Error fetching recipes:', error);
+    }
+  }
+
+  async function saveRecipes() {
+    try {
+      await fetch('http://localhost:3001/NewRecipeData', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(NewRecipes),
+      });
+    } catch (error) {
+      console.error('Error saving recipes:', error);
+    }
+  }
+
+  fetchRecipes();
+
+  return () => {
+    ignore = true;
+  };
+}, [NewRecipes]);
 
 /*-------------*/
 
@@ -38,6 +74,8 @@ return () => {
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
+
+  
 
   const handleAddRecipe = (newRecipe) => {
     setRecipes([...recipes, newRecipe]);

@@ -1,6 +1,6 @@
 //objects to hold reciep data (4 items)
 
-const recipeData = [
+const RecipeData = [
     {
       id:1,
       name: 'Chocolate Chip Cookies',
@@ -55,5 +55,5 @@ const recipeData = [
     // Add more recipe objects if needed
   ];
   
-  export default recipeData;
+  export default RecipeData;
   
