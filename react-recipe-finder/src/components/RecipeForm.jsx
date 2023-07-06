@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+
 //the recipe form will take 4 things: name, ingredients, and instructions.
 
 function RecipeForm({ handleAddRecipe }) {
@@ -18,7 +19,9 @@ function RecipeForm({ handleAddRecipe }) {
       image,
       status: 1,
     };
-    //fetch db.json
+
+   
+   
     
     const response = await fetch('http://localhost:3000/NewRecipeData',{
       method:'POST',
@@ -38,7 +41,7 @@ function RecipeForm({ handleAddRecipe }) {
 
   return (
     /*input fields*/
-    <form className="recipe-form" onSubmit={handleSubmit}>
+    <form method = "post" className="recipe-form" onSubmit={handleSubmit}>
       <h2>Upload a New Recipe</h2>
       <div>
         <label htmlFor="name">Recipe Name:</label>
