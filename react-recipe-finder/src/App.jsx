@@ -10,7 +10,7 @@ import './App.css';
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [recipes, setRecipes] = useState(RecipeData);
-  const[NewRecipes, setNewRecipes] = useState([]);
+  const[NewRecipeData, setNewRecipes] = useState([]);
 /*db.json*/
 /*
 useEffect(() => {
@@ -32,41 +32,24 @@ return () => {
 }, []);
 */
 useEffect(() => {
-  let ignore = false;
+
 
   async function fetchRecipes() {
-    try {
+  
       const response = await fetch('http://localhost:3000/NewRecipeData');
       const recipes = await response.json();
-      if (!ignore) {
+  setRecipes(recipes);
         setNewRecipes(recipes);
-      }
-      return recipes;
-    } catch (error) {
-      console.error('Error fetching recipes:', error);
-    }
+      
+    
+ 
   }
 
-  async function saveRecipes() {
-    try {
-      await fetch('http://localhost:3001/NewRecipeData', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(NewRecipes),
-      });
-    } catch (error) {
-      console.error('Error saving recipes:', error);
-    }
-  }
 
   fetchRecipes();
 
-  return () => {
-    ignore = true;
-  };
-}, [NewRecipes]);
+  
+}, []);
 
 /*-------------*/
 
@@ -79,13 +62,17 @@ useEffect(() => {
 
   const handleAddRecipe = (newRecipe) => {
     setRecipes([...recipes, newRecipe]);
-    setNewRecipes([...NewRecipes, newRecipe]);
+    setNewRecipes([...NewRecipeData, newRecipe]);
   };
 
   const filteredRecipes = recipes.filter((recipe) =>
     recipe.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
+/*
+  const recipeCards = filteredRecipes.map((recipe, i) => {
+    return <JobCard recipe={recipe} key={i} />;
+  });
+*/
   return (
 
     <div className="App">
