@@ -1,6 +1,29 @@
 import React, { useEffect, useState } from 'react';
 
-function RecipeItem({ recipe }) {
+function RecipeItem({ recipe, handleDeleteRecipe }) {
+  console.log(recipe);
+  console.log("THE RECIPE ID: " + recipe.id);
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/NewRecipeData/${recipe.id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        // Recipe deleted successfully
+       // Update the state or perform any other necessary action
+       window.location.reload();
+
+      } else {
+        // Handle the error case, e.g., show an error message
+        console.error('Error deleting recipe');
+      }
+    } catch (error) {
+      console.error(error);
+      // Handle the error case, e.g., show an error message
+    }
+  };
+
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const togglePopup = () => {
@@ -10,14 +33,17 @@ function RecipeItem({ recipe }) {
   const closePopup = () => {
     setIsPopupOpen(false);
   };
-//press escape to leave popup
 
   useEffect(() => {
     const handleKeyPress = (event) => {
       if (event.key === 'Escape') {
         closePopup();
       }
+      if (event.key === 'x' || event.key === 'X') {
+        handleDelete();
+      }
     };
+
     if (isPopupOpen) {
       window.addEventListener('keydown', handleKeyPress);
     }
@@ -25,18 +51,15 @@ function RecipeItem({ recipe }) {
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
-  }, [isPopupOpen]);
-  
-//implemented a popup so when a recipe is clicked on it will  open up ingredients and instructions, videos
+  }, [isPopupOpen, handleDelete]);
+
   return (
-    
     <div className="recipe-item" onClick={togglePopup}>
+      <button>Delete (Press X) Exit Popup (Press Esc)</button>
       <img src={recipe.image} alt={recipe.name} className="recipe-image" />
       <h3>{recipe.name}</h3>
-      {/*this is pop up, when recipe cicked on display name and ingredients and instructions*/}
       {isPopupOpen && (
         <div className="popup">
-         
           <h3>{recipe.name}</h3>
           <h4>Ingredients:</h4>
           <ul>
@@ -53,7 +76,6 @@ function RecipeItem({ recipe }) {
         </div>
       )}
     </div>
-    
   );
 }
 
