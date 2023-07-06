@@ -2,8 +2,12 @@
 import React, { useState } from 'react';
 import { Form, redirect } from "react-router-dom";
 
-export async function action({ request }) {
-  const { name, ingredients, instructions, image } = request.body;
+export async function action({ handleAddRecipe }) {
+  const [name, setName] = useState('');
+  const [ingredients, setIngredients] = useState('');
+  const [instructions, setInstructions] = useState('');
+    const [image, setImage] = useState('');
+
   const newRecipe = {
     name,
     ingredients: ingredients.split(',').map((ingredient) => ingredient.trim()),
@@ -19,13 +23,19 @@ export async function action({ request }) {
     },
     body: JSON.stringify(newRecipe),
   });
-
+  const addedRecipe = await response.json();
+   
+  handleAddRecipe(addedRecipe);
+  setName('');
+  setIngredients('');
+  setInstructions('');
+  setImage('');
   return redirect('/');
 }
 
 
 //the recipe form will take 4 things: name, ingredients, and instructions.
-/*
+
 function RecipeForm({ handleAddRecipe }) {
   const [name, setName] = useState('');
   const [ingredients, setIngredients] = useState('');
@@ -63,7 +73,7 @@ function RecipeForm({ handleAddRecipe }) {
   };
 
   return (
-    /*input fields
+    /*input fields*/
     <form method = "post" className="recipe-form" onSubmit={handleSubmit}>
       <h2>Upload a New Recipe</h2>
       <div>
@@ -93,7 +103,7 @@ function RecipeForm({ handleAddRecipe }) {
 }
 
 export default RecipeForm;
-*/
+/*
 function RecipeForm() {
   const [name, setName] = useState('');
   const [ingredients, setIngredients] = useState('');
@@ -150,3 +160,5 @@ function RecipeForm() {
 }
 
 export default RecipeForm;
+
+*/
