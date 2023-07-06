@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import './recipeItem.css';
 function RecipeItem({ recipe }) {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 

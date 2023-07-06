@@ -1,0 +1,24 @@
+
+.recipe-item {
+    cursor: pointer;
+    background-color:darkkhaki;
+  }
+  
+  .recipe-item:hover {
+    opacity: 0.7;
+    transform:scale(1.2);
+  }
+  
+  .recipe-item:active {
+    transform: scale(0.95);
+  }
+  
+  .recipe-item {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .recipe-item.fade-out {
+    opacity: 0;
+  }
+  
