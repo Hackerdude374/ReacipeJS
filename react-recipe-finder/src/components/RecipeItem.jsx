@@ -81,7 +81,7 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
       } else if (event.key === 'e' || event.key === 'E') {
         handleEdit();
       }
-      else if (event.key === 's' || event.key === 'S') {
+      else if (event.key === 'Enter') {
         event.preventDefault(); // Prevent the default 's' key behavior (e.g., saving the form)
         handleSubmit();
       }
@@ -130,7 +130,7 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
               onChange={handleChange}
             />
           </label>
-          <button type="submit">Submit</button>
+          <button type="submit">Submit (press Enter)</button>
         </form>
       ) : (
         <>
