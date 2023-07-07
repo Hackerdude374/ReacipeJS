@@ -97,6 +97,7 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
   };
 
   useEffect(() => {
+    
     const handleKeyPress = (event) => {
       if (event.key === 'Escape') {
         closePopup();
