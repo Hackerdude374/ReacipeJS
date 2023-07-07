@@ -88,7 +88,7 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
         [name]: instructions,
       }));
     }
-    else if (name === "imageURL") {
+    else if (name === "image") {
       setEditedRecipe((prevRecipe) => ({
         ...prevRecipe,
         image: value,
