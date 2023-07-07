@@ -66,12 +66,27 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setEditedRecipe((prevRecipe) => ({
-      ...prevRecipe,
-      [name]: value,
-    }));
+  
+    if (name === "name") {
+      setEditedRecipe((prevRecipe) => ({
+        ...prevRecipe,
+        [name]: value,
+      }));
+    } else if (name === "ingredients") {
+      const ingredients = value.split("\n");
+      setEditedRecipe((prevRecipe) => ({
+        ...prevRecipe,
+        [name]: ingredients,
+      }));
+    } else if (name === "instructions") {
+      const instructions = value.split("\n");
+      setEditedRecipe((prevRecipe) => ({
+        ...prevRecipe,
+        [name]: instructions,
+      }));
+    }
   };
-
+  
   useEffect(() => {
     const handleKeyPress = (event) => {
       if (event.key === 'Escape') {
