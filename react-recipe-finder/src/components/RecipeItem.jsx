@@ -46,7 +46,10 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(editedRecipe),
+        body: JSON.stringify({
+          ...editedRecipe,
+          image: editedRecipe.imageURL, // Update the image field with imageURL value
+        }),
       });
 
       if (response.ok) {
@@ -66,7 +69,7 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-  
+
     if (name === "name") {
       setEditedRecipe((prevRecipe) => ({
         ...prevRecipe,
@@ -85,8 +88,14 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
         [name]: instructions,
       }));
     }
+    else if (name === "imageURL") {
+      setEditedRecipe((prevRecipe) => ({
+        ...prevRecipe,
+        image: value,
+      }));
+    }
   };
-  
+
   useEffect(() => {
     const handleKeyPress = (event) => {
       if (event.key === 'Escape') {
@@ -95,8 +104,7 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
         handleDelete();
       } else if (event.key === 'e' || event.key === 'E') {
         handleEdit();
-      }
-      else if (event.key === 'Enter') {
+      } else if (event.key === 'Enter') {
         event.preventDefault(); // Prevent the default 's' key behavior (e.g., saving the form)
         handleSubmit();
       }
@@ -109,8 +117,7 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
-  },  [isPopupOpen, handleDelete, handleSubmit]);
-
+  }, [isPopupOpen, handleDelete, handleSubmit]);
 
   return (
     <div className="recipe-item" onClick={togglePopup}>
@@ -142,6 +149,15 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
             <textarea
               name="instructions"
               value={editedRecipe.instructions.join('\n')}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            ImageURL:
+            <input
+              type="text"
+              name="imageURL"
+              value={editedRecipe.image}
               onChange={handleChange}
             />
           </label>
