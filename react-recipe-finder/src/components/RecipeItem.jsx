@@ -22,7 +22,7 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
       // Handle the error case, e.g., show an error message
     }
   };
-
+//------------------------------------------------------------
   const handleEdit = () => {
     setIsEditing(true);
   };
@@ -77,7 +77,7 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
       }));
     } else if (name === "ingredients") {
       const ingredients = value.split("\n");
-      setEditedRecipe((prevRecipe) => ({
+      setEditedRecipe((prevRecipe) => ({ 
         ...prevRecipe,
         [name]: ingredients,
       }));
@@ -180,6 +180,7 @@ function RecipeItem({ recipe, handleDeleteRecipe }) {
                 {recipe.instructions.map((instruction, index) => (
                   <li key={index}>{instruction}</li>
                 ))}
+                PRESS ESC TO CLOSE
               </ol>
             </div>
           )}

@@ -52,37 +52,28 @@
       ]
     },
     {
-      "name": "bananasssssssssssss",
+      "name": "zvsz",
       "ingredients": [
-        "bananasssss"
+        "zvzv"
       ],
       "instructions": [
-        "bananassss"
+        "zvzv"
       ],
+      "image": "zvzv",
       "status": 1,
-      "id": 3
+      "id": 6
     },
     {
       "name": "sgs",
       "ingredients": [
-        "sgs"
+        "sgse"
       ],
       "instructions": [
-        "sgsg"
+        "sgse"
       ],
+      "image": "sgsg",
       "status": 1,
-      "id": 4
-    },
-    {
-      "name": "afaf",
-      "ingredients": [
-        "afaf"
-      ],
-      "instructions": [
-        "afaf"
-      ],
-      "status": 1,
-      "id": 5
+      "id": 7
     }
   ]
 }
