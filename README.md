@@ -65,5 +65,56 @@ npm install
 npm start
 
 # Run the frontend for visualization
-npm run dev
+
 ```
+Visit http://localhost:3000 in your browser for the frontend visualization.
+
+Make sure to run the backend server to enable data management and ensure the saving of new recipes on the website even after a refresh.
+```bash
+json-server --watch db.json --port 3001
+```
+
+## Async Functions
+
+### Fetching Recipes (`fetchRecipes` Function)
+
+The following asynchronous function, `fetchRecipes`, demonstrates the use of the `async/await` pattern to fetch recipe data from a server. This function utilizes the modern `fetch` API to make a network request.
+
+```javascript
+async function fetchRecipes() {
+  try {
+    // Asynchronously fetch recipe data from the server
+    const response = await fetch('https://api.example.com/recipes');
+    
+    // Check if the request was successful (status code 200)
+    if (!response.ok) {
+      throw new Error(`Failed to fetch recipes. Status: ${response.status}`);
+    }
+
+    // Parse the response as JSON
+    const recipes = await response.json();
+
+    // Process the fetched recipes as needed
+    console.log('Fetched Recipes:', recipes);
+    
+    return recipes;
+  } catch (error) {
+    // Handle errors during the asynchronous operation
+    console.error('Error fetching recipes:', error.message);
+    throw error;
+  }
+}
+```
+**Technical Explanation:**
+
+- The `async` keyword indicates that the function will perform asynchronous operations, allowing the use of `await`.
+- The `await` keyword is used to pause the execution of the function until the asynchronous operation (e.g., fetching data) is complete.
+- The `try/catch` block is employed to handle potential errors during the asynchronous operation.
+- The `fetch` API is utilized to make an asynchronous network request to the specified URL.
+- The response status is checked, and if it's not okay, an error is thrown.
+- The response is then parsed as JSON using `response.json()`.
+- The fetched recipes are logged and returned.
+
+This asynchronous function showcases modern JavaScript's clean and concise syntax for handling asynchronous operations, providing a robust mechanism for fetching and processing data from a remote server.
+
+Feel free to customize the function name, URL, and error handling based on your specific project requirements.
