@@ -1,6 +1,6 @@
-# Recipe Finder
+# React Recipe Finder
 
-A well-organized recipe navigation site built with the latest front-end technologies.
+A delightful recipe website where you can add, view, and explore delicious recipes.
 
 ## 🛠 Technologies Used
 
@@ -18,11 +18,6 @@ A well-organized recipe navigation site built with the latest front-end technolo
 - **CRUD Operations**: Enabled the ability to update and delete recipes, ensuring full flexibility and control over the recipe data with backend support.
 
 
-# React Recipe Finder
-
-A delightful recipe website where you can add, view, and explore delicious recipes.
-
-![Project Image](link_to_your_project_image)
 
 ## Table of Contents
 1. [Introduction](#introduction)
