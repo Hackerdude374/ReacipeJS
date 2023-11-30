@@ -58,3 +58,14 @@ Ensure you have the following installed:
    ```bash
    git clone https://github.com/your-username/react-recipe-finder.git
    cd react-recipe-finder
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/your-username/react-recipe-finder.git
+
+# Change into the project directory
+cd react-recipe-finder
+
+# Install dependencies
+npm install
+```
