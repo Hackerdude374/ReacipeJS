@@ -10,12 +10,6 @@ A delightful recipe website where you can add, view, and explore delicious recip
 - **Tailwind CSS**: Utility-first CSS framework for rapidly building custom user interfaces.
 - **Json Server**: Emulated a backend server for the mock API, ensuring persistent data storage.
 
-## ✨ Features
-
-- **State Management**: Leveraged React's useState hook for dynamic recipe list display.
-- **Seamless Navigation**: Integrated React Router for fluid navigation and improved search capabilities, enhancing the overall user experience.
-- **Recipe Submission**: Built a Form component for users to submit their recipes. This feature ensures data persistence via the mock API.
-- **CRUD Operations**: Enabled the ability to update and delete recipes, ensuring full flexibility and control over the recipe data with backend support.
 
 
 
@@ -37,13 +31,12 @@ A delightful recipe website where you can add, view, and explore delicious recip
 ## Introduction
 React Recipe Finder is a user-friendly web application that allows you to manage and explore a collection of your favorite recipes. With features like adding new recipes, browsing, and searching, it's the perfect tool for food enthusiasts.
 
-## Features
-- **Add Recipe**: Easily add new recipes with a name, image, and description.
-- **Browse Recipes**: Explore a collection of mouth-watering recipes.
-- **Search Functionality**: Find recipes based on various criteria like ingredient, cuisine, etc.
-- **Async Functions**: Efficiently load and display recipes using asynchronous functions.
-- **State Management**: Utilize React's `useState` hook to manage and update the list of recipes.
-- **Styling**: Enhance the user experience with styled recipe displays.
+## ✨ Features
+
+- **State Management**: Leveraged React's useState hook for dynamic recipe list display.
+- **Seamless Navigation**: Integrated React Router for fluid navigation and improved search capabilities, enhancing the overall user experience.
+- **Recipe Submission**: Built a Form component for users to submit their recipes. This feature ensures data persistence via the mock API.
+- **CRUD Operations**: Enabled the ability to update and delete recipes, ensuring full flexibility and control over the recipe data with backend support.
 
 ## Getting Started
 To get started with React Recipe Finder, follow these steps:
@@ -64,3 +57,8 @@ cd react-recipe-finder
 # Install dependencies
 npm install
 ```
+## Usage
+```bash
+# Run the project locally
+npm start
+
