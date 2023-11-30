@@ -120,4 +120,3 @@ async function fetchRecipes() {
 
 This asynchronous function showcases modern JavaScript's clean and concise syntax for handling asynchronous operations, providing a robust mechanism for fetching and processing data from a remote server.
 
-Feel free to customize the function name, URL, and error handling based on your specific project requirements.
