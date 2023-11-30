@@ -57,8 +57,13 @@ cd react-recipe-finder
 # Install dependencies
 npm install
 ```
+
+
 ## Usage
 ```bash
-# Run the project locally
+# Run the backend server for data management
 npm start
 
+# Run the frontend for visualization
+npm run dev
+```
