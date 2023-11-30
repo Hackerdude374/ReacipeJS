@@ -50,30 +50,6 @@
         "Add cooked pasta to the skillet and toss to coat with the sauce.",
         "Serve hot with grated Parmesan cheese."
       ]
-    },
-    {
-      "name": "zvsz",
-      "ingredients": [
-        "zvzv"
-      ],
-      "instructions": [
-        "zvzv"
-      ],
-      "image": "zvzv",
-      "status": 1,
-      "id": 6
-    },
-    {
-      "name": "sgs",
-      "ingredients": [
-        "sgse"
-      ],
-      "instructions": [
-        "sgse"
-      ],
-      "image": "sgsg",
-      "status": 1,
-      "id": 7
     }
   ]
 }
