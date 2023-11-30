@@ -2,6 +2,9 @@
 
 A delightful recipe website where you can add, view, and explore delicious recipes.
 
+## Demo
+https://streamable.com/ny18nx
+
 ## 🛠 Technologies Used
 
 - **CSS**: For styling and layout.
