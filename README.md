@@ -54,11 +54,6 @@ Ensure you have the following installed:
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
 ### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/react-recipe-finder.git
-   cd react-recipe-finder
-### Installation
 ```bash
 # Clone the repository
 git clone https://github.com/your-username/react-recipe-finder.git
